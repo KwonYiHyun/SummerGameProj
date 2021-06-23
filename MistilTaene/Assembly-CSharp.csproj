@@ -56,12 +56,25 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\char\PlayerMoving.cs" />
-    <Compile Include="Assets\Scripts\char\PlayerSkillMinions.cs" />
-    <Compile Include="Assets\Scripts\char\MinionController.cs" />
-    <Compile Include="Assets\Scripts\char\Tusamono.cs" />
-    <Compile Include="Assets\Scripts\char\PlayerSkilltusa.cs" />
     <Compile Include="Assets\Scripts\char\PlayerSkillrensa.cs" />
+    <Compile Include="Assets\Scripts\char\Tusamono.cs" />
+    <Compile Include="Assets\Scripts\char\MinionController.cs" />
+    <Compile Include="Assets\Scripts\char\PlayerMoving.cs" />
+    <Compile Include="Assets\Scripts\char\PlayerSkilltusa.cs" />
+    <Compile Include="Assets\Scripts\char\PlayerSkillMinions.cs" />
+    <Compile Include="Assets\Scripts\enemyHp.cs" />
+    <Compile Include="Assets\Scripts\CamFollow.cs" />
+    <Compile Include="Assets\Scripts\inven1\Item.cs" />
+    <Compile Include="Assets\Scripts\inven1\ItemPickup.cs" />
+    <Compile Include="Assets\Scripts\etc\backto.cs" />
+    <Compile Include="Assets\Scripts\etc\adf.cs" />
+    <Compile Include="Assets\Scripts\inven1\Slot.cs" />
+    <Compile Include="Assets\Scripts\inven1\ItemGetController.cs" />
+    <Compile Include="Assets\Scripts\LoadingNextScene.cs" />
+    <Compile Include="Assets\Scripts\inven1\inventory.cs" />
+    <Compile Include="Assets\Scripts\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\inven1\Dragslot.cs" />
+    <Compile Include="Assets\Scripts\WirteName.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

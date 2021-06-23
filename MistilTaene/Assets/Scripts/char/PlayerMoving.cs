@@ -43,10 +43,9 @@ public class PlayerMoving : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         keycheck();
-        Jumps();
         if (iswall)
             transform.position = wallpos;
         else
@@ -55,25 +54,18 @@ public class PlayerMoving : MonoBehaviour
                 Move();
         }
             stoptowall();
-        atktest();
+       
     }
-    void atktest()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            animator.SetBool("isatk", true);
-        }
-        else
-        {
-            animator.SetBool("isatk", false);
-        }
+        Jumps();
     }
     void stoptowall() //벽박기,엔티티 충돌판정
     {
         //레이 쏘기 
-        Debug.DrawRay(transform.position + new Vector3(0, 0.4f, 0), transform.up * 0.5f, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), transform.up * 0.5f, Color.red);
         //Debug.DrawRay(transform.position + new Vector3(-1f, 1.4f, 0), transform.right * 2f, Color.red);
-        headbak = Physics2D.Raycast(transform.position + new Vector3(0, 0.6f, 0), transform.up, 0.5f, LayerMask.GetMask("BADAK"));
+        headbak = Physics2D.Raycast(transform.position + new Vector3(0, 1f, 0), transform.up, 0.5f, LayerMask.GetMask("BADAK"));
         //headbak = Physics2D.Raycast(transform.position + new Vector3(-1f,1.4f, 0), transform.right, 2f, LayerMask.GetMask("BADAK"));
 
         Debug.DrawRay(transform.position + new Vector3(0, -2f, 0), -transform.up * 0.5f, Color.red);
@@ -102,12 +94,12 @@ public class PlayerMoving : MonoBehaviour
             if (Running)
             {
                 animator.SetBool("isrun", true);
-                moveSpeed = 20f;
+                moveSpeed = 8f;
             }
             else
             {
                 animator.SetBool("isrun", false);
-                moveSpeed = 10f;
+                moveSpeed = 4f;
             }
             if (isBorder)
             {
@@ -119,12 +111,12 @@ public class PlayerMoving : MonoBehaviour
 
             if (moveInput < 0)
             {
-                transform.localScale = new Vector3(-5, 5, 5);
+                transform.localScale = new Vector3(-0.4f, 0.4f, 5);
                 isflip = true;
             }
             else
             {
-                transform.localScale = new Vector3(5, 5, 5);
+                transform.localScale = new Vector3(0.4f, 0.4f, 5);
                 isflip = false;
             }
         }
@@ -135,7 +127,7 @@ public class PlayerMoving : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other) //무언가에 박았다면
     {
-        animator.SetBool("isground", true); //땅판정 참
+        //animator.SetBool("isground", true); //땅판정 참
         animator.SetBool("isjump", false); //점프판정 거짓
 
         //점프가 가능한 상태로 만듦
