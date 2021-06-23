@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\enemyHp.cs" />
     <Compile Include="Assets\Scripts\CamFollow.cs" />
     <Compile Include="Assets\Scripts\char\PlayerSkillMinions.cs" />
+    <Compile Include="Assets\Scripts\char\PlayerDotge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
